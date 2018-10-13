@@ -10,9 +10,12 @@ import rootReducer from './reducers/rootReducer'
 
 import {Provider} from 'react-redux'
 
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension' // для дебага редакса
 
-const store = createStore(rootReducer) // создаем store для нашего приложение и передаем в него rootReducer
+import thunk from 'redux-thunk' // асинхронные диспатчи
+
+const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk))) // создаем store для нашего приложение и передаем в него rootReducer
 
 ReactDOM.render(
     <BrowserRouter>
