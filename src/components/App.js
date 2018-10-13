@@ -1,10 +1,14 @@
 import React,{Component} from 'react'
 
+import Sidebar from './Sidebar'
+import Layout from '../containers/Layout'
+
 class App extends Component{
     render(){
         return(
             <div>
-                Hello Incode-Group
+                <Sidebar/>
+                <Layout/>
             </div>
         )
     }
