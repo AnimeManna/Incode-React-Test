@@ -1,0 +1,36 @@
+{
+  "name": "Incode-React-Test",
+  "version": "1.0.1",
+  "description": "Тестовое задание для Incode-Group",
+  "main": "index.js",
+  "repository": "https://github.com/AnimeManna/Incode-React-test",
+  "author": "Gladko Maxim",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.82.5",
+    "webpack": "^4.15.1",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "react-hot-loader": "^4.3.3",
+    "style-loader": "^0.21.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
