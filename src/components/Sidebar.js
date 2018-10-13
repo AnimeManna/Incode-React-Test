@@ -2,23 +2,45 @@ import React, {Component} from 'react'
 
 import {connect} from 'react-redux'
 
+import {Link} from 'react-router-dom'
+
 import {xhrData} from "../actions/xhrData";
 
 import {
-    Input
+    Input,
+    List,
+    Image,
 } from 'semantic-ui-react'
 
-class Sidebar extends Component{
+class Sidebar extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.xhrData()
     }
 
-    render(){
+    render() {
         console.log(this.props.clients);
-        return(
+        // безуспешные попытки найти как это сделать в semantic-ui а не через style
+        return (
             <div>
-                <Input icon="search" placeholder="Search" width="100%" />
+                <Input icon="search" placeholder="Search" style={{width:'100%'}} />
+                <List style={{overflow:'auto', maxHeight:500, minWidth:'100%'}} >
+                    {this.props.clients.map((value) => {
+                        const {general} = value;
+                        const {job} = value
+                        return (
+                            <Link to={`/client/${value.id}`} key={value.id} style={{color:'black',padding:10}}>
+                                    <List.Item style={{display:'flex'}}>
+                                        <Image  src={general.avatar} style={{width:80, height:80}} />
+                                        <List.Content>
+                                            <List.Header> {general.firstName} {general.lastName} </List.Header>
+                                            <List.Description> {job.company} </List.Description>
+                                        </List.Content>
+                                    </List.Item>
+                            </Link>
+                        )
+                    })}
+                </List>
             </div>
         )
     }
