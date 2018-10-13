@@ -1,7 +1,9 @@
 import {
     XHR_CLIENTS_SUCCESS,
-    GET_CLIENT
+    GET_CLIENT,
+    SEARCH_CLIENT
 } from "../ActionsType/ActionTypes";
+
 
 const initialState={
     clients:[
@@ -9,7 +11,10 @@ const initialState={
     ],
     user:{
 
-    }
+    },
+    viewClients:[
+
+    ]
 }
 
 
@@ -19,6 +24,9 @@ export default (state=initialState, action) =>{
             return{
                 ...state,
                 clients:[
+                    ...action.payload
+                ],
+                viewClients:[
                     ...action.payload
                 ]
             }
@@ -34,6 +42,23 @@ export default (state=initialState, action) =>{
                 user:{
                     ...someClient
                 }
+            }
+        }
+        case SEARCH_CLIENT:{
+            const {payload} = action
+           const newClients =  state.clients.filter((value)=>{
+               for(let key in value){
+                   for(let newKey in value[key]){
+                       if(value[key][newKey].includes(payload)){
+                           return value
+                           continue;
+                       }
+                   }
+               }
+            })
+            return {
+                ...state,
+                viewClients: newClients
             }
         }
         default:{
