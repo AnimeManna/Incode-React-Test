@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "Тестовое задание для Incode-Group",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+  },
   "repository": "https://github.com/AnimeManna/Incode-React-test",
   "author": "Gladko Maxim",
   "license": "ISC",
