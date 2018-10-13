@@ -11,6 +11,7 @@ import {
     Input,
     List,
     Image,
+    Segment
 } from 'semantic-ui-react'
 
 class Sidebar extends Component {
@@ -23,8 +24,8 @@ class Sidebar extends Component {
         console.log(this.props.clients);
         // безуспешные попытки найти как это сделать в semantic-ui а не через style
         return (
-            <div>
-                <Input icon="search" placeholder="Search" style={{width:'100%'}} />
+            <Segment>
+                <Input icon="search" placeholder="Search"  />
                 <List style={{overflow:'auto', maxHeight:500, minWidth:'100%'}} >
                     {this.props.clients.map((value) => {
                         const {general} = value;
@@ -44,7 +45,7 @@ class Sidebar extends Component {
                         )
                     })}
                 </List>
-            </div>
+            </Segment>
         )
     }
 }
