@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {xhrData} from "../actions/xhrData";
+import {getClient} from "../actions/getClient";
 
 import {
     Input,
@@ -30,7 +31,9 @@ class Sidebar extends Component {
                         const {job} = value
                         return (
                             <Link to={`/client/${value.id}`} key={value.id} style={{color:'black',padding:10}}>
-                                    <List.Item style={{display:'flex'}}>
+                                    <List.Item style={{display:'flex'}} onClick={()=>{
+                                        this.props.getClient(value.id)
+                                    }} >
                                         <Image  src={general.avatar} style={{width:80, height:80}} />
                                         <List.Content>
                                             <List.Header> {general.firstName} {general.lastName} </List.Header>
@@ -47,7 +50,8 @@ class Sidebar extends Component {
 }
 
 const mapDispatchToProps = {
-    xhrData
+    xhrData,
+    getClient
 }
 
 export default connect(
