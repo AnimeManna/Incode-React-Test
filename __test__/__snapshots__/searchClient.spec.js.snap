@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchClint_actions dispatch searchClient 1`] = `
+Array [
+  Object {
+    "payload": "test",
+    "type": "SEARCH_CLIENT",
+  },
+]
+`;

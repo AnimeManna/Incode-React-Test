@@ -1,7 +1,6 @@
 import React from 'react'
 import configureStore from 'redux-mock-store'
-import renderer from 'react-test-renderer'
-import {shallow, render, mount} from 'enzyme'
+import {shallow} from 'enzyme'
 
 import Client from '../src/components/Client'
 import toJson from "enzyme-to-json";

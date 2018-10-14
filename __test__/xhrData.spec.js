@@ -15,8 +15,7 @@ describe('xhrData_actions',()=>{
         store.dispatch(xhrData());
 
         const actions = store.getActions();
-        const expectedPayload = {type:XHR_CLIENTS_START};
-        expect(actions).toEqual([expectedPayload])
+        expect(actions).toMatchSnapshot()
     })
 
 })

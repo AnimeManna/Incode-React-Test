@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component render View sidebar clients 1`] = `
+<Segment>
+  <Input
+    icon="search"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+  />
+  <List
+    style={
+      Object {
+        "maxHeight": 500,
+        "minWidth": "100%",
+        "overflow": "auto",
+      }
+    }
+  >
+    <Link
+      key="0"
+      replace={false}
+      style={
+        Object {
+          "color": "black",
+          "padding": 10,
+        }
+      }
+      to="/client/0"
+    >
+      <ListItem
+        onClick={[Function]}
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <Image
+          as="img"
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/andysolomon/128.jpg"
+          style={
+            Object {
+              "height": 80,
+              "width": 80,
+            }
+          }
+          ui={true}
+        />
+        <ListContent>
+          <ListHeader
+            style={
+              Object {
+                "fontSize": 20,
+                "padding": 5,
+              }
+            }
+          >
+             
+             
+            Test LastName
+             
+          </ListHeader>
+          <ListDescription
+            style={
+              Object {
+                "fontSize": 13,
+                "padding": 5,
+              }
+            }
+          >
+             
+            Test incorporation
+             
+          </ListDescription>
+        </ListContent>
+      </ListItem>
+    </Link>
+  </List>
+</Segment>
+`;

@@ -50,23 +50,3 @@ exports[`Client components render() View client info 1`] = `
   </ItemGroup>
 </Segment>
 `;
-
-exports[`Client container render() render the component 1`] = `
-<div
-  className="item"
-  onClick={[Function]}
-  role="listitem"
->
-  <ListIcon
-    name="user"
-  />
-  <ListContent>
-     
-    Ololoev
-     
-    Ololevn
-     
-     
-  </ListContent>
-</div>
-`;

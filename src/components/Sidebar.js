@@ -79,9 +79,11 @@ const mapDispatchToProps = {
     searchClient
 }
 
+const mapStateToProps = (state) => ({
+    viewClients: state.clientsReducer.viewClients
+})
+
 export default connect(
-    state => ({
-        viewClients: state.clientsReducer.viewClients
-    }),
+    mapStateToProps,
     mapDispatchToProps
 )(Sidebar)

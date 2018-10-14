@@ -18,8 +18,7 @@ describe('searchClint_actions', ()=>{
         store.dispatch(searchClient('test'));
 
         const actions = store.getActions();
-        const expectedPayload = {type:SEARCH_CLIENT,payload:'test'};
-        expect(actions).toEqual([expectedPayload]);
+        expect(actions).toMatchSnapshot();
     })
 
 
