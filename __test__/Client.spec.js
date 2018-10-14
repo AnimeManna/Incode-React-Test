@@ -1,20 +1,51 @@
 import React from 'react'
 import configureStore from 'redux-mock-store'
 import renderer from 'react-test-renderer'
-import {shallow} from 'enzyme'
-
+import {shallow, render, mount} from 'enzyme'
 
 import Client from '../src/components/Client'
+import toJson from "enzyme-to-json";
 
-const initalState = {};
+describe('Client components',()=>{
+    const mockStore = configureStore()
+    const initialState = {
+        clientsReducer:{
+            clients:[
 
-const mockStore = configureStore()
+            ],
+            viewClients:[
 
-let wrapper;
-let store;
+            ],
+            user: {
+                general: {
+                    firstName: 'Ololoev',
+                    lastName: 'Ololevn',
+                    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/andysolomon/128.jpg'
+                },
+                job: {
+                    title: 'DNU',
+                    company: 'Incode-Group'
+                },
+                contact: {
+                    email: 'ololoev@gmail.com',
+                    phone: '0999201'
+                },
+                address: {
+                    country: 'Ukraine',
+                    city: 'Dnepr',
+                    street: 'Kazakova',
+                    zipCode: '49000'
 
-beforeEach(() => {
-    //creates the store with any initial state or middleware needed
-    store = mockStore(initialState)
-    wrapper = shallow(<Client store={store}/>)
+                }
+            }
+        }
+    }
+    const store = mockStore(initialState);
+    describe('render()', ()=>{
+        test('View client info',()=>{
+            const wrapper = shallow (<Client store={store} />)
+            const component = wrapper.dive();
+            expect(toJson(component)).toMatchSnapshot();
+        })
+    })
 })

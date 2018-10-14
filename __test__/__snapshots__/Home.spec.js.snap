@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Home /> render() render the components 1`] = `
+<div
+  className="ui center aligned segment"
+>
+  Welcome Incode-Group sure you will like it)
+</div>
+`;
+
 exports[`Home changes the class when hovered 1`] = `
 <div
   className="ui center aligned segment"

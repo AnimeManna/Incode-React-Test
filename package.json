@@ -1,5 +1,10 @@
 {
   "name": "Incode-React-Test",
+  "jest":{
+    "setupFiles": [
+      "<rootDir>/__test__/setup/setupTests.js"
+    ]
+  },
   "version": "1.0.1",
   "description": "Тестовое задание для Incode-Group",
   "main": "index.js",

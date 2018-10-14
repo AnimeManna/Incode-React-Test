@@ -1,16 +1,18 @@
-import React from 'react'
-import Home from '../src/components/Home'
-import renderer from 'react-test-renderer';
+import React from 'react';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import {shallow} from 'enzyme'
+import configureStore from 'redux-mock-store'
+import Home from '../src/components/Home'
+
 
 describe('<Home />', ()=>{
     describe('render()', ()=>{
-        test('render the components',()=>{})
-        const wrapper = shallow(<Home />)
-        const component = wrapper.dive()
+        test('render the components',()=>{
+            const wrapper = shallow(<Home />)
+            const component = wrapper.dive()
 
-        expect(toJson(component)).toMathSnapshot();
+            expect(toJson(component)).toMatchSnapshot();
+        })
     })
 })
 

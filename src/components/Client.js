@@ -35,8 +35,8 @@ class Client extends Component{
     }
 }
 
-export default connect(
-    state => ({
-        user: state.clientsReducer.user
-    })
-)(Client)
+const mapStateToProps = (state) => ({
+    user: state.clientsReducer.user
+})
+
+export default connect(mapStateToProps)(Client)
