@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
 
 import {
-    List,
-    Segment
+    List
 } from 'semantic-ui-react'
 
 class ListItem extends Component {
     render() {
-        console.log(this.props)
         return (
             <List.Item>
                 <List.Icon name={this.props.icon}/>

@@ -40,12 +40,10 @@ class Sidebar extends Component {
             searchInput: value
         });
         this.props.searchClient(this.state.searchInput);
-        console.log(this.state)
 
     }
 
     render() {
-        console.log(this.props.viewClients);
         // безуспешные попытки найти как это сделать в semantic-ui а не через style
         return (
             <Segment>

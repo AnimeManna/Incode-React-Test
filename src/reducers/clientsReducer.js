@@ -33,11 +33,9 @@ export default (state=initialState, action) =>{
             }
         }
         case GET_CLIENT:{
-            console.log('REDUUUUCER',action.payload);
             let someClient = state.clients.find((value)=>{
                 return (value.id===action.payload)
             })
-            console.log('SOME CLIENTS',someClient)
             return{
                 ...state,
                 user:{

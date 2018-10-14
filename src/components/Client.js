@@ -12,7 +12,6 @@ import {
 
 class Client extends Component{
     render(){
-        console.log('USER ID',this.props.user.id)
         const {general} = this.props.user
         const {job} = this.props.user
         const {contact} = this.props.user
