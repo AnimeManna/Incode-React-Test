@@ -11,11 +11,11 @@ class App extends Component{
     render(){
         return(
             <div>
-                <Grid columns={2} divided>
-                    <Grid.Column width={3}>
+                <Grid columns={2}>
+                    <Grid.Column width={4}>
                         <Sidebar/>
                     </Grid.Column>
-                    <Grid.Column width={11}>
+                    <Grid.Column width={10}>
                         <Layout/>
                     </Grid.Column>
                 </Grid>

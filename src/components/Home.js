@@ -5,6 +5,7 @@ import {
 } from 'semantic-ui-react'
 
 class Home extends Component{
+
     render(){
         return(
             <Segment textAlign="center" >

@@ -6,7 +6,6 @@ import ListItem from './ListItem'
 
 import {
     Item,
-    Image,
     List,
     Segment
 } from 'semantic-ui-react'
@@ -25,7 +24,7 @@ class Client extends Component{
                         <Item.Content style={{padding:10}}>
                             <List>
                                 <ListItem icon="user" firstText={general.firstName} secondText={general.lastName}  />
-                                <ListItem icon="briefcase" firstText={job.company} secondText={job.title}  />
+                                <ListItem icon="briefcase" firstText={job.title} secondText={job.company}  />
                                 <ListItem icon="marker" firstText={address.country} secondText={address.city} thirdText={address.street} fourthText={address.zipCode} />
                                 <ListItem icon="mail" firstText={contact.email} secondText={contact.phone} />
                             </List>
