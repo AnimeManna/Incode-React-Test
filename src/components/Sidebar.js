@@ -10,6 +10,8 @@ import {xhrData} from "../actions/xhrData";
 import {getClient} from "../actions/getClient";
 import {searchClient} from "../actions/searchClient";
 
+import {clientsSelector} from "../selectors/clientsSelector";
+
 
 import {
     Input,
@@ -84,30 +86,19 @@ const mapDispatchToProps = {
 
 
 
-const searchInput = (state) => {return state.clientsReducer.searchInput}
+const searchInput = (state) => state.clientsReducer.searchInput
 
 const clients = (state) => state.clientsReducer.clients
 
-const clientsSelector = createSelector(
+const indexSelector = createSelector(
     [clients,searchInput],
     (client,search)=>{
-        return client.filter(
-            (value)=>{
-                for(let key in value){
-                    for(let newKey in value[key]){
-                        if(value[key][newKey].includes(search)){
-                            return value;
-                            continue;
-                        }
-                    }
-                }
-            }
-        )
+        return clientsSelector(client,search)
     }
 )
 
 const mapStateToProps = (state) => ({
-    viewClients: clientsSelector(state)
+    viewClients: indexSelector(state)
 })
 
 

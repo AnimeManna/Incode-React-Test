@@ -1,17 +1,9 @@
-import {createSelector} from 'reselect'
-
-const searchInput = (state) => state.clientsReducer.searchInput
-
-const clients = (state) => state.clientsReducer.clients;
-
-export const clientsSelector = createSelector(
-    [clients,searchInput],
-    (items)=>{
-        return items.filter(
+export const clientsSelector = (client,search)=>{
+        return client.filter(
             (value)=>{
                 for(let key in value){
                     for(let newKey in value[key]){
-                        if(value[key][newKey].includes(searchInput())){
+                        if(value[key][newKey].includes(search)){
                             return value
                             continue;
                         }
@@ -20,4 +12,3 @@ export const clientsSelector = createSelector(
             }
         )
     }
-)
