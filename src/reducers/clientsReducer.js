@@ -14,7 +14,8 @@ const initialState={
     },
     viewClients:[
 
-    ]
+    ],
+    searchInput:''
 }
 
 
@@ -46,19 +47,9 @@ export default (state=initialState, action) =>{
         }
         case SEARCH_CLIENT:{
             const {payload} = action
-           const newClients =  state.clients.filter((value)=>{
-               for(let key in value){
-                   for(let newKey in value[key]){
-                       if(value[key][newKey].includes(payload)){
-                           return value
-                           continue;
-                       }
-                   }
-               }
-            })
             return {
                 ...state,
-                viewClients: newClients
+                searchInput:payload
             }
         }
         default:{

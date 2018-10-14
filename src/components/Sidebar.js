@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import {createSelector} from 'reselect'
+
 import {connect} from 'react-redux'
 
 import {Link} from 'react-router-dom'
@@ -7,6 +9,7 @@ import {Link} from 'react-router-dom'
 import {xhrData} from "../actions/xhrData";
 import {getClient} from "../actions/getClient";
 import {searchClient} from "../actions/searchClient";
+
 
 import {
     Input,
@@ -79,9 +82,36 @@ const mapDispatchToProps = {
     searchClient
 }
 
+
+
+const searchInput = (state) => {return state.clientsReducer.searchInput}
+
+const clients = (state) => state.clientsReducer.clients
+
+const clientsSelector = createSelector(
+    [clients,searchInput],
+    (client,search)=>{
+        return client.filter(
+            (value)=>{
+                for(let key in value){
+                    for(let newKey in value[key]){
+                        if(value[key][newKey].includes(search)){
+                            return value;
+                            continue;
+                        }
+                    }
+                }
+            }
+        )
+    }
+)
+
 const mapStateToProps = (state) => ({
-    viewClients: state.clientsReducer.viewClients
+    viewClients: clientsSelector(state)
 })
+
+
+
 
 export default connect(
     mapStateToProps,
